@@ -1,0 +1,30 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Kocki
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int n = 9;
+            int m = 6;
+            int choko = 0;
+            int min;
+            if (m > n)
+            {
+                min = n;
+            }
+            else
+            {
+                min = m;
+            }
+            if (min % 2 != 0) min--;
+            choko = min * min;
+            Console.WriteLine(choko);
+        }
+    }
+}
