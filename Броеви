@@ -1,0 +1,45 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Broevi
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.WriteLine("Vnesete prv broj");
+            int n = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("Vnesete vtor broj");
+            int m = Convert.ToInt32(Console.ReadLine());
+            int brojac1;
+            int broj;
+            int brojprv;
+            int brojvtor;
+            int brojac2 = 0;
+            for (int i = n; i<=m; i++)
+            {
+                brojac1 = 0;
+                broj = i;
+                while (broj >= 10)
+                {
+                    brojprv = broj % 10;
+                    brojvtor = (broj / 10) % 10;
+                    broj = broj / 10;
+                    if(brojprv <= brojvtor)
+                    {
+                        brojac1++;
+                        break;
+                    }
+                }
+                if (brojac1 == 0)
+                {
+                    brojac2++;
+                }
+            }
+            Console.WriteLine(brojac2);
+        }
+    }
+}
