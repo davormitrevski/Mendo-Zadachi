@@ -1,0 +1,43 @@
+using System;
+
+namespace Biznismen
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            string prv = Console.ReadLine();
+            string vtor = Console.ReadLine();
+            int sum = 0;
+            int brtipkanje = 0;
+            if (prv == vtor)
+            {
+                Console.WriteLine(0);
+            }
+            else
+            {
+                for (int i = 0; i < prv.Length; i++)
+                {
+                    if (vtor[i] > prv[i])
+                    {
+                        brtipkanje = vtor[i] - prv[i];
+                        if (brtipkanje > 5)
+                        {
+                            brtipkanje = 10 - brtipkanje;
+                        }
+                    }
+                    else
+                    {
+                        brtipkanje = prv[i] - vtor[i];
+                        if (brtipkanje > 5)
+                        {
+                            brtipkanje = 10 - brtipkanje;
+                        }
+                    }
+                    sum += brtipkanje;
+                }
+            }
+            Console.WriteLine(sum);
+        }
+    }
+}
