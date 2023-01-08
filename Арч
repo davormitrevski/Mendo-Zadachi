@@ -1,0 +1,45 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Arch
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.WriteLine(" Vnesete broevi: ");
+            int n;
+            n = Convert.ToInt32(Console.ReadLine());
+            string broj;
+            int BrojNaBroevi = 0;
+            int PatiNaTipkajne = 0;
+
+            
+            for (int i = 0; i < n; i++)
+            {
+                Console.WriteLine(" Vnesete Broj: ");
+                broj = Console.ReadLine();
+                bool MozeDaSeNapise = true;
+                for (int j = 0; j < broj.Length; j++)
+                {
+                    if (broj[j] == '1' | broj[j] == '3' | broj[j] == '5' | broj[j] == '7' | broj[j] == '9')
+                    {
+                        MozeDaSeNapise = false;
+                    }
+                   
+                }
+
+                if (MozeDaSeNapise == true)
+                   
+                {
+                    BrojNaBroevi = BrojNaBroevi + 1;
+                    PatiNaTipkajne = PatiNaTipkajne + broj.Length;
+                }
+            }
+            Console.WriteLine(" Napisal  " + BrojNaBroevi + " broevi, a za toa napravil arch od " + PatiNaTipkajne + " tipkajna. ");
+        }
+    }
+}
