@@ -1,0 +1,53 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Podaroci
+{
+    class Program
+    {
+        struct Kutija
+        {
+            public int dolzina;
+            public int shirina;
+        }
+        struct Poklon
+        {
+            public int dolzina;
+            public int shirina;
+        }
+        static void Main(string[] args)
+        {
+            Kutija kutija;
+            Poklon poklon;
+            int brojac = 0;
+            List<Poklon> pokloni = new List<Poklon>();
+            kutija.dolzina = Convert.ToInt32(Console.ReadLine());
+            kutija.shirina = Convert.ToInt32(Console.ReadLine());
+            int n = Convert.ToInt32(Console.ReadLine());
+            for (int i = 0; i < n; i++)
+            {
+                poklon.dolzina = Convert.ToInt32(Console.ReadLine());
+                poklon.shirina = Convert.ToInt32(Console.ReadLine());
+                pokloni.Add(poklon);
+            }
+            List<Poklon> novipokloni = new List<Poklon>();
+            for (int i = 0; i < pokloni.Count; i++)
+            {
+                if (pokloni[i].dolzina <= kutija.dolzina || pokloni[i].dolzina <= kutija.shirina)
+                {
+                    if (pokloni[i].shirina <= kutija.dolzina || pokloni[i].shirina <= kutija.shirina)
+                    {
+                        brojac++;
+                        novipokloni.Add(pokloni[i]);
+                    }
+                }
+            }
+            Console.WriteLine(brojac);
+            for (int i = 0; i < novipokloni.Count; i++)
+                Console.WriteLine(novipokloni[i].dolzina + " " + novipokloni[i].shirina);
+        }
+    }
+}
