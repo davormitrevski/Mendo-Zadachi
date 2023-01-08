@@ -1,0 +1,50 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Tufi_i_Dvojce
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int TM1 = 1;
+            int TS1 = 31;
+            int TM2 = 1;
+            int TS2 = 49;
+
+            int DM1 = 1;
+            int DS1 = 25;
+            int DM2 = 1;
+            int DS2 = 30;
+
+            int VkupnoMinTufi;
+            int VkupnoSekTufi;
+            VkupnoMinTufi = TM1 + TM2;
+            VkupnoSekTufi = TS1 + TS2;
+
+            int VkupnoMinDvojce;
+            int VkupnoSekDvojce;
+            VkupnoMinDvojce = DM1 + DM2;
+            VkupnoSekDvojce = DS1 + DS2;
+
+            int RazlikaMin;
+            int RazlikaSek;
+            if (VkupnoMinTufi > VkupnoMinDvojce || VkupnoSekTufi > VkupnoSekDvojce)
+            {
+                RazlikaMin = VkupnoMinTufi - VkupnoMinDvojce;
+                RazlikaSek = VkupnoSekTufi - VkupnoSekDvojce;
+
+                Console.WriteLine(" Prv Stignal Dvojce  so razlika: " + RazlikaMin + " Minuti i " + RazlikaSek + " Sekundi.");
+            }
+            else 
+            {
+                RazlikaMin = VkupnoMinTufi - VkupnoMinDvojce;
+                RazlikaSek = VkupnoSekDvojce - VkupnoSekDvojce;
+                Console.WriteLine(" Prva Stignala Tufi  so razlika: " + RazlikaMin + " Minuti i " + RazlikaSek + " Sekundi.");
+            }
+        }
+    }
+}
