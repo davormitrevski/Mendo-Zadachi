@@ -1,0 +1,30 @@
+using System;
+using System.Collections.Generic;
+namespace Slika
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            List<int> broevi = new List<int>();
+            int brojkol = 0;
+            for(int i = 0; i < 500; i++)
+            {
+                int n = Convert.ToInt32(Console.ReadLine());
+                broevi.Add(n);
+                if (n == 3)
+                    break;
+            }
+            for(int i = 0; i < broevi.Count; i++)
+            {
+                if (broevi[i] == 2 && broevi[i - 1] == 1)
+                {
+                    brojkol = i - 1;
+                    break;
+                }
+            }
+            int brredici = broevi.Count / brojkol;
+            Console.WriteLine(brredici + " " + brojkol);
+        }
+    }
+}
