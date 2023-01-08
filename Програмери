@@ -1,0 +1,40 @@
+using System;
+
+namespace Programeri
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.WriteLine(" Vnesete go brojot na ucenici: ");
+            int ucenici;
+            ucenici = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine(" Vnesete go brojot na zadaci: ");
+            int zadaci;
+            zadaci = Convert.ToInt32(Console.ReadLine());
+            int[] reseniZadaci = new int[ucenici];
+            int dobriParovi = 0;
+
+            for (int i = 0; i< ucenici; i++)
+            {
+                Console.WriteLine(" Vnesete go brojot na reseni zadaci: ");
+                reseniZadaci[i] = Convert.ToInt32(Console.ReadLine());
+            }
+            for (int i = 0; i<reseniZadaci.Length; i++)
+            {
+                for (int j = 0; j<reseniZadaci.Length; j++)
+                {
+                    if (i == j)
+                    {
+                        break;
+                    }
+                    if ( reseniZadaci[i] - reseniZadaci[j] == zadaci)
+                    {
+                        dobriParovi++;
+                    }
+                }
+            }
+            Console.WriteLine(" Brojot na dobri parovi e: " + dobriParovi);
+        }
+    }
+}
