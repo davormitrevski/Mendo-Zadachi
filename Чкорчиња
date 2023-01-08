@@ -1,0 +1,42 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Chkorchinja
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            List<int> Chkorchinja = new List<int>() { 6, 3, 5, 5, 4, 5, 5, 3, 7, 5 };
+            Console.WriteLine(" Vnesete broj na chorchinja ");
+            int BrojNaChkorcinja;
+            BrojNaChkorcinja = Convert.ToInt32(Console.ReadLine());
+            int NajgolemBroj = 0;
+            
+            
+            for (int i = 1000; i <= 9999; i++)
+            {
+                
+                int chkorchinja = 0;
+                int temp = i;
+                while (temp > 0)
+                
+                {
+                    int digit = temp % 10;
+                     temp = temp / 10;
+                    chkorchinja += Chkorchinja[digit];
+                }
+                if (chkorchinja == BrojNaChkorcinja)
+                {
+                    NajgolemBroj = i;
+                }
+            }
+            Console.WriteLine(" So upotreba na site chkorchinja najgolemiot koj moze da go pretstavi e: " + NajgolemBroj );
+           
+            
+        }
+    }
+}
