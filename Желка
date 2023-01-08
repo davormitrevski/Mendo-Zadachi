@@ -1,0 +1,35 @@
+using System;
+
+namespace Zhelka
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.WriteLine(" Vnesete kolku metri treba da istrca zelkata ");
+            int h;
+            h = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine(" Vnesete kolku metri moze da istrca zelkata vo eden den ");
+            int u;
+            u = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine(" Vnesete kolku metra se lizga na nazad na vecer ");
+            int d;
+            d = Convert.ToInt32(Console.ReadLine());
+            int denovi;
+          
+
+            if (h > u && u < h)
+            {
+                denovi = ((h - d - 1) / (u - d)) + 1;
+                Console.WriteLine(" Potrebni se: " + denovi + " denovi. ");
+            }
+            else
+            {
+                h = u;
+                denovi = 1;
+                Console.WriteLine();
+                Console.WriteLine(" Potreben e: " + denovi + " den. " );
+            }
+        }
+    }
+}
