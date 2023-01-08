@@ -1,0 +1,36 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Strajk
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int vtoropolugod = 18;
+            int strajk = 16;
+            int brojnasedmici;
+            int nedeli;
+            nedeli = strajk / 5;
+            int denovioddruganedela;
+            denovioddruganedela = strajk % 5;
+            int kogadapocni;
+            kogadapocni = vtoropolugod - (vtoropolugod - nedeli);
+            int kolkuostanuva;
+            kolkuostanuva = vtoropolugod - nedeli;
+            int brojnadenovi;
+            if (strajk > kolkuostanuva)
+            {
+                brojnadenovi = strajk - kolkuostanuva;
+                brojnasedmici = brojnadenovi / 6;
+                brojnasedmici++;
+                Console.WriteLine(" Polugodieto ke bide prodolzeno za " + brojnasedmici + " sedmica ");
+            }
+            
+
+        }
+    }
+}
