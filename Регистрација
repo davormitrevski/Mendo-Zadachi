@@ -1,0 +1,43 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Registracija
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            string Ime = Console.ReadLine();
+            int n = Convert.ToInt32(Console.ReadLine());
+            List<string> iminja = new List<string>();
+            int RedenBroj = 1;
+            for (int i=0; i<n; i++)
+            {
+                string temp = Console.ReadLine();
+                iminja.Add(temp);
+            }
+            string NovoIme = Ime;
+            if (!iminja.Contains(Ime))
+            {
+                NovoIme = Ime;
+            }
+            for (int i=0; i<iminja.Count; i++)
+            {
+                for ( int j=0; j<iminja.Count; i++)
+                {
+                    if (NovoIme == iminja[j])
+                    {
+                        NovoIme = Ime + RedenBroj;
+                        RedenBroj++;
+                        i--;
+                    }
+                }
+            }
+            Console.WriteLine();
+            Console.WriteLine(NovoIme);
+        }
+    }
+}
