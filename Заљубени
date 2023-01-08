@@ -1,0 +1,68 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Zaljubeni
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int vesna = Convert.ToInt32(Console.ReadLine());
+            int krste = Convert.ToInt32(Console.ReadLine());
+            int enNapred = Convert.ToInt32(Console.ReadLine());
+            int enNazad = Convert.ToInt32(Console.ReadLine());
+            int vkupnaEn = 0;
+            int l = Convert.ToInt32(Console.ReadLine());
+            List<int> postojki = new List<int>();
+            for (int i = 0; i < l; i++)
+            {
+                postojki.Add(Convert.ToInt32(Console.ReadLine()));
+            }
+            int najbliskaPostojkaV = postojki[0];
+            int minV = Math.Abs(vesna - postojki[0]);
+            int najbliskaPostojkaK = postojki[0];
+            int minK = Math.Abs(krste - postojki[0]);
+            for (int i = 0; i < postojki.Count; i++)
+            {
+                if (Math.Abs(vesna - postojki[i]) < minV)
+                {
+                    minV = Math.Abs(vesna - postojki[i]);
+                    najbliskaPostojkaV = postojki[i];
+                }
+                if (Math.Abs(krste - postojki[i]) < minK)
+                {
+                    minK = Math.Abs(krste - postojki[i]);
+                    najbliskaPostojkaK = postojki[i];
+                }
+            }
+            if (vesna > najbliskaPostojkaV)
+            {
+                vkupnaEn = (vesna - najbliskaPostojkaV) * enNazad;
+                if (krste > najbliskaPostojkaK)
+                {
+                    vkupnaEn += (krste - najbliskaPostojkaK) * enNapred;
+                }
+                else
+                {
+                    vkupnaEn += (najbliskaPostojkaK - krste) * enNazad;
+                }
+            }
+            else
+            {
+                vkupnaEn = (najbliskaPostojkaV - vesna) * enNapred;
+                if (krste > najbliskaPostojkaK)
+                {
+                    vkupnaEn += (krste - najbliskaPostojkaK) * enNapred;
+                }
+                else
+                {
+                    vkupnaEn += (najbliskaPostojkaK - krste) * enNazad;
+                }
+            }
+            Console.WriteLine(vkupnaEn);
+        }
+    }
+}
