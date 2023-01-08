@@ -1,0 +1,18 @@
+using System;
+
+namespace Paketi
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int Vistina = 4;
+            int Razum = 8;
+            for(int i = 1; i < 10000; i++)
+            {
+                if (Vistina % i == 0 && Razum % 1 == 0)
+                    Console.WriteLine(i);
+            }
+        }
+    }
+}
