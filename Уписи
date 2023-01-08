@@ -1,0 +1,41 @@
+using System;
+using System.Collections.Generic;
+namespace Upisi
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int brojac = 0;
+            bool istoVreme = false;
+            int n = Convert.ToInt32(Console.ReadLine());
+            int[,] niza = new int[n, 2];
+            for(int i=0; i<n; i++)
+            {
+                int Hi = Convert.ToInt32(Console.ReadLine());
+                niza[i, 0] = Hi;
+                int Mi = Convert.ToInt32(Console.ReadLine());
+                niza[i, 1] = Mi;
+            }
+            for(int i = 0; i<n; i++)
+            {
+                for (int j = 0; j < n; j++)
+                {
+                    if (niza[i, 0] == niza[j, 0] && niza [i, 1] == niza[j, 1])
+                    {
+                        istoVreme = true;
+                    }
+                }
+                if (istoVreme == true)
+                {
+                    brojac++;
+                }
+            }
+            if (brojac == 0)
+            {
+                brojac++;
+            }
+            Console.WriteLine(brojac);
+        }
+    }
+}
