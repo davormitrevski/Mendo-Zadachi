@@ -1,0 +1,21 @@
+using System;
+using System.Collections.Generic;
+namespace Komisija
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int n = Convert.ToInt32(Console.ReadLine());
+            int k = Convert.ToInt32(Console.ReadLine());
+            List<int> zadaci = new List<int>();
+            for (int i=0; i<n; i++)
+            {
+                zadaci.Add(Convert.ToInt32(Console.ReadLine()));
+            }
+            zadaci.Sort();
+            int programa = zadaci[n - k] - zadaci[n - k - 1];
+            Console.WriteLine(" Postojat :" + programa + " nachini.");
+        }
+    }
+}
