@@ -1,0 +1,18 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Semejni_vrski
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int a = 25;
+            int b = (a % 10) * 10 + a / 10;
+            Console.WriteLine(" Najstariot clen ima: "+  (a + b) + " godini ");
+        }
+    }
+}
