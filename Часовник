@@ -1,0 +1,75 @@
+using System;
+
+namespace Chasovnik
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int prvh = Convert.ToInt32(Console.ReadLine());
+            int prvm = Convert.ToInt32(Console.ReadLine());
+            int vtorh = Convert.ToInt32(Console.ReadLine());
+            int vtorm = Convert.ToInt32(Console.ReadLine());
+            int sum = 0;
+            int brtipkanjeh = 0;
+            int brtipkanjem = 0;
+            if (vtorh > prvh && prvh == 0)
+            {
+                prvh = 24;
+                brtipkanjeh = prvh - vtorh;
+                if (brtipkanjeh == 1)
+                {
+                    brtipkanjeh = 0;
+                }
+            }
+            else if (vtorh > prvh)
+            {
+                brtipkanjeh = vtorh - prvh;
+                if (brtipkanjeh > 12)
+                {
+                    brtipkanjeh = 24 - brtipkanjeh;
+                }
+            }
+            if (prvh > vtorh && vtorh == 0)
+            {
+                vtorh = 24;
+                brtipkanjeh = vtorh - prvh;
+                if (brtipkanjeh == 1)
+                {
+                    brtipkanjeh = 0;
+                }
+            }
+            else if (prvh > vtorh)
+            {
+                brtipkanjeh = prvh - vtorh;
+                if (brtipkanjeh > 12)
+                {
+                    brtipkanjeh = 24 - brtipkanjeh;
+                }
+            }
+            if (vtorm > prvm)
+            {
+                brtipkanjem = vtorm - prvm;
+                if (brtipkanjem > 30)
+                {
+                    brtipkanjem = 60 - brtipkanjem;
+                }
+            }
+            else
+            {
+                brtipkanjem = prvm - vtorm;
+                if (brtipkanjem > 30)
+                {
+                    brtipkanjem = 60 - brtipkanjem;
+                }
+            }
+            sum += brtipkanjeh + brtipkanjem;
+            if (prvh == vtorh && (prvm > 30 || vtorm > 30))
+            {
+                sum += 1;
+            }
+            Console.WriteLine();
+            Console.WriteLine(sum + " Tipkanja." );
+        }
+    }
+}
