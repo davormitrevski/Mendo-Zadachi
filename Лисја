@@ -1,0 +1,31 @@
+using System;
+using System.Collections.Generic;
+namespace Lisja
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.WriteLine(" Vnesete go brojot na denovi vo mesecot: ");
+            int n = Convert.ToInt32(Console.ReadLine());
+            List<int> Listovi = new List<int>();
+            Console.WriteLine(" Vnesete kolku listovi padnale sekoj den ");
+            for(int i=1; i<=n; i++)
+            {
+                int temp = Convert.ToInt32(Console.ReadLine());
+                Listovi.Add(temp);
+            }
+            int max = Listovi[0];
+            int den = 0;
+            for(int i = 0; i < Listovi.Count; i++)
+            {
+                if (Listovi[i] > max)
+                {
+                    max = Listovi[i];
+                    den = i + 1;
+                }
+            }
+            Console.WriteLine(den + " noemvri ");
+        }
+    }
+}
