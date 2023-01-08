@@ -1,0 +1,34 @@
+using System;
+using System.Collections.Generic;
+namespace Nova_Zgrada
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            List<int> sprat = new List<int>();
+            int kabineti = 0;
+            for(int i = 0; i < 5; i++)
+            {
+                sprat.Add(Convert.ToInt32(Console.ReadLine()));
+            }
+            int n = Convert.ToInt32(Console.ReadLine());
+            for(int i = 0; i < n - 1; i++)
+            {
+                kabineti += sprat[i];
+            }
+            if (kabineti >= 6 && kabineti <= 20)
+            {
+                Console.WriteLine(100 - 40);
+            }
+            else if (kabineti > 20)
+            {
+                Console.WriteLine(100 - 50);
+            }
+            else
+            {
+                Console.WriteLine(100);
+            }
+        }
+    }
+}
