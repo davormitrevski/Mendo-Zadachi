@@ -1,0 +1,47 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Aerodrom
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+
+            int CasNaPoagj = 10;
+            int MinNaPoagj = 25;
+
+            int CasNaPrist = 12;
+            int MinNaPrist = 50;
+
+
+
+            int brojac = 0;
+
+            while (CasNaPrist != CasNaPoagj || MinNaPrist != MinNaPoagj)
+            {
+                if (CasNaPrist % 10 == MinNaPrist / 10 && CasNaPrist / 10 == MinNaPrist % 10)
+                {
+                    brojac++;
+                }
+                MinNaPrist++;
+                if (MinNaPrist == 60)
+                {
+                    MinNaPrist = 0;
+                    CasNaPrist++;
+                }
+                if (CasNaPrist == 24)
+                    CasNaPrist = 0;
+               
+            }
+            if (CasNaPrist % 10 == MinNaPrist / 10 && CasNaPrist / 10 == MinNaPrist % 10)
+            
+                brojac++;
+            
+            Console.WriteLine(" Darko izboril: " + brojac + " palindromi.");
+        }
+    }
+}
