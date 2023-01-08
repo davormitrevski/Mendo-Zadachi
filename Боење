@@ -1,0 +1,43 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Boenje
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int redovi = 2;
+            int kvadrati = 4;
+
+            int crvenikocki;
+            int zoltikocki;
+            int zelenikocki;
+
+            int prvaboja;
+            int vtoraboja;
+            int tretaboja;
+            prvaboja = (redovi + 2) / 3;
+            vtoraboja = (redovi + 1) / 3;
+            tretaboja = redovi / 3;
+
+            int prvred;
+            int vtorred;
+            int tretred;
+            prvred = (kvadrati + 2) / 3;
+            vtorred = (kvadrati + 1) / 3;
+            tretred = kvadrati / 3;
+
+            crvenikocki = (prvred * prvaboja) + (vtorred * tretaboja) + (tretred * vtoraboja);
+            zoltikocki = (prvred * vtoraboja) + (vtorred * prvaboja) + (tretred * tretaboja);
+            zelenikocki = (prvred * tretaboja) + (vtorred * vtoraboja) + (tretred * prvaboja);
+
+            Console.WriteLine(" Brojot na crveni kvadratchinja e " + crvenikocki);
+            Console.WriteLine(" Brojot na zolti kvadratchinja e " + zoltikocki);
+            Console.WriteLine(" Brojot na zeleni kvadratchinja e " + zelenikocki);
+        }
+    }
+}
