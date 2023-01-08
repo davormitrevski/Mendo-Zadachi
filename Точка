@@ -1,0 +1,61 @@
+using System;
+
+namespace Tocka
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int ax, ay, bx, by, px=1, py=2, dx, dy;
+            int a=3, b=2;
+            int tx=4, ty=1;
+            int A, B, C, D;
+            if (px >= 0 && px <= 1000 && py >= 0 && py <= 1000 && a >= 1 && a <= 1000 && b >= 1 && b <= 1000 && tx >= 0 && ty <= 1000)
+            {
+                dx = px + a;
+                dy = py;
+                bx = dx;
+                by = dy + b;
+                ax = px;
+                ay = py + b;
+                if (tx == ax && ty == ay)
+                {
+                    Console.WriteLine("Strana");
+                }
+                if (tx == bx && ty == by)
+                {
+                    Console.WriteLine("Strana");
+                }
+
+                if (ty <= by && ty >= dy && tx == bx)
+                {
+                    Console.WriteLine("Strana");
+                }
+                if (tx == dx && ty == dy)
+                {
+                    Console.WriteLine("Strana");
+                }
+                if (tx <= dx && tx >= px && ty == dy)
+                {
+                    Console.WriteLine("Strana");
+                }
+                if (tx == px && ty == py)
+                {
+                    Console.WriteLine("Strana");
+                }
+                if (ty >= py && ty <= ay && tx == ax)
+                {
+                    Console.WriteLine("Strana");
+                }
+                if (tx >= px && tx <= bx && ty >= py && ty <= by)
+                {
+                    Console.WriteLine("Vnatre");
+                }
+                else
+                {
+                    Console.WriteLine("Nadvor");
+                }
+            }
+        }
+    }
+}
